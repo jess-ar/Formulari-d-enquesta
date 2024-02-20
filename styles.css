@@ -1,0 +1,110 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #102529;
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+  }
+  
+  h1, p {
+    margin: 1em auto;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  
+  form {
+    
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 1rem 0;
+    border-bottom: 3px solid #093032;
+    margin: 10px 0 0 0;
+   
+  }
+  
+  
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  input, textarea {
+    background-color: #033535;
+    border: 1px solid #0aa190;
+    color: #ffffff;
+  }
+  
+  .inline {
+    position: absolute;
+    width: unset;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-inline-start: auto;
+    margin-inline: initial;
+    border-radius: 10px;
+   
+    
+  }
+  
+  input[type="radio"] {
+   
+  }
+    
+
+  input[type="checkbox"] {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    /* Adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -2px;
+    /* Set here so that Windows' High-Contrast Mode can override */
+    color: rgb(205, 240, 28);
+    border-width: 5cm;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "✔";
+    position: absolute;
+    font-size: 1.2em;
+    right: -0.5px;
+    top: -0.1em;
+    visibility: hidden;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    /* Use `visibility` instead of `display` to avoid recalculating layout */
+    visibility: visible;
+  }
+  
+
+  button {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #0aa190;
+    border-color: white;
+    min-width: 300px;
+    border-radius: 200px;
+  }
+
+  
+  

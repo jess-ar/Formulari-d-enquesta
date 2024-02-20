@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari d'enquesta</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">Formulari d'enquesta</h1>
+    <p id="description">Agraïm el temps dedicat a col·laborar en la millora contínua de la plataforma.</p>
+
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label" for="name">Nom<input type="text" id="name" name="name"  placeholder="Introdueix el teu nom" required></label>
+        <label id="email-label" for="email">Correu electrònic<input type="email" id="email" name="email" placeholder="Introdueix el teu correu electrònic" required></label>
+        <label id="number-label" for="number">Edat (opcional)<input type="number" id="number" name="number" placeholder="Edat" min="1" max="100" required></label>
+      </fieldset>
+
+      <br><br>
+
+      <fieldset>
+        <label for="dropdown">Actualment estic:</label>
+        <select id="dropdown" class="inline" name="dropdown" required>
+          <option value="" disabled selected hidden>Selecciona una opció</option>
+          <option value="option1">Treballant</option>
+          <option value="option2">Estudiant</option>
+          <option value="option3">Altre</option>
+          <option value="option4">Prefereixo no dir-ho</option>
+        </select>
+      </fieldset>
+
+      <br><br>
+
+      <fieldset>
+        <label>Recomanaries freeCodeCamp a un amic:</label>
+        <br><br>
+        <input type="radio" id="optionA" class="inline" name="recommend" value="optionA">
+        <label for="optionA">Sí, és clar</label>
+        <input type="radio" id="optionB" class="inline" name="recommend" value="optionB">
+        <label for="optionB">Potser</label>
+        <input type="radio" id="optionC" class="inline" name="recommend" value="optionC">
+        <label for="optionC">No estic segur/a</label>
+      </fieldset>
+
+      <br><br>
+
+      <label>Que t'agradaria estudiar ?</label>
+      <br><br>
+
+      <fieldset>
+        <input type="checkbox" id="optionD" name="opcionesCheckbox[]" value="optionD">
+        <label for="optionD">Projectes front-end</label>
+        <input type="checkbox" id="optionE" name="opcionesCheckbox[]" value="optionE">
+        <label for="optionE">Projectes de back-end</label>
+        <input type="checkbox" id="optionF" name="opcionesCheckbox[]" value="optionF">
+        <label for="optionF">Visualització de dades</label>
+        <input type="checkbox" id="optionG" name="opcionesCheckbox[]" value="optionG">
+        <label for="optionG">Comunitat de codi obert</label>
+        <input type="checkbox" id="optionH" name="opcionesCheckbox[]" value="optionH">
+        <label for="optionH">Fòrum</label>
+        <input type="checkbox" id="optionI" name="opcionesCheckbox[]" value="optionI">
+        <label for="optionI">Cursos addicionals</label>
+      </fieldset>
+
+      <br><br>
+
+      <label for="comments">Comentaris addicionals:</label>
+      <textarea id="comments" name="comments" placeholder="Deixa els teus comentaris aquí"></textarea>
+
+      <br><br>
+
+      <button type="submit" id="submit">Enviar</button>
+    </form>
+  </body>
+</html>
