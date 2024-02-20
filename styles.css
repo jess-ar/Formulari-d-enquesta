@@ -63,11 +63,7 @@ body {
     
   }
   
-  input[type="radio"] {
-   
-  }
-    
-
+  
   input[type="checkbox"] {
     position: absolute;
     width: 1em;
