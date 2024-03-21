@@ -1,44 +1,67 @@
+
+
 body {
-  width: 100%;
-  height: 100vh;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  background-color: #000000;
-  color: #f5f6f7;
-  font-family: Tahoma;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  justify-content: center; 
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  background-image: link;
+  background: linear-gradient(115deg, rgba(8, 103, 110, 0.8), rgba(236, 201, 74, 0.815)),url('images/img-people.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  
 }
 
-h1,
-p {
-  margin: 1em auto;
-  text-align: center;
-  padding: 0.5rem 0;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.title {
+  font-size: 50px;
+  padding-top: 50px;
 }
 
-form {
-  width: 60vw;
-  max-width: 800px;
-  min-width: 500px;
-  margin: 0 auto;
-  padding-bottom: 2em;
-  border-radius: 1%;
-  padding: 2em;
+
+.survey-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 40px 20px;
+  border-radius: 10px;
   opacity: 85%;
   background-color: #02383c;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+form {
+  max-width: 600px;
+  min-width: 300px;
+  padding: 40px 20px;
+  border-radius: 10px;
+  opacity: 85%;
+  background-color: #02383c;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 fieldset {
   border: none;
   padding: 1rem 0;
-  border-bottom: 3px solid #f3f70b;
+  border-bottom: 3px solid darkorange;
 }
 
 label {
   display: block;
   margin: 0.5rem 0;
+}
+
+fieldset legend {
+  padding-top: 20px;
 }
 
 input,
@@ -47,14 +70,15 @@ select {
   margin: 10px 0 0 0;
   width: 100%;
   min-height: 2em;
+  box-sizing: border-box;
 }
 
 input,
 textarea {
   background-color: #ffffff;
-  border: 1px solid #f3f70b;
-  color: #ffffff;
-  color: black;
+  border: 1px solid darkorange;
+  color: #000000;
+
 }
 
 .inline {
@@ -66,41 +90,60 @@ textarea {
   border-radius: 10px;
 }
 
+::placeholder {
+  color: #949139; 
+  font-style: italic; 
+  padding: 5px;
+ 
+}
+
 input[type="checkbox"] {
-  width: 1em;
-  height: 1em;
-  /* Adjusts the position of the checkboxes on the text baseline */
-  vertical-align: -2px;
-  /* Set here so that Windows' High-Contrast Mode can override */
-  color:#f3f70b;
-  border-width: 5cm;
+  -webkit-appearance: none; 
+  -moz-appearance: none;    
+  appearance: none;         
+  background-color: white; /*color de fondo de los cuadraditos*/
+  border: 2px solid darkorange; /* borde de los cuadraditos*/
+  width: 15px; /*tamaño cuadradito */
+  height: 15px; /*tamaño cuadradito */
+  cursor: pointer;
+  /* Agrega posición relativa para el elemento padre */
+  position: relative;
+  margin-right: 8px; /* para separar el texto del cuadradito*/
 }
 
-.placeholder {
-  color:#ffffff;
+ /* Cambia el color del indicador de marcado cuando el checkbox está marcado */
+ input[type="checkbox"]:checked {
+  background-color: darkorange;
 }
 
-
+/* Pseudo-elemento ::before para agregar un tick cuando el checkbox está marcado */
 input[type="checkbox"]::before {
-  content: "✔";
-  font-size: 1.2em;
-  right: -0.5px;
-  top: -0.1em;
-  visibility: hidden;
+  content: '\2713'; /* Símbolo Unicode del tick (✓) */
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*para centrar el tick*/
+  font-size: 14px;
+  visibility: hidden; /*para hacer invisible la parte que clicamos o no*/
 }
 
+/* Muestra el tick cuando el checkbox está marcado */
 input[type="checkbox"]:checked::before {
-  /* Use `visibility` instead of `display` to avoid recalculating layout */
   visibility: visible;
+}
+
+.comments {
+  min-height: 8em;
 }
 
 button {
   display: block;
-  width: 60%;
+  width: 100%;
   margin: 1em auto;
   height: 2em;
   font-size: 1.1rem;
-  background-color: #f3f70b;
+  background-color: darkorange;
   border-color: white;
   min-width: 300px;
   border-radius: 200px;
@@ -108,21 +151,11 @@ button {
 
 .container {
   display: flex;
-  flex-direction: inherit;
+  flex-direction: row;
   gap: 0.5em;
 }
-
-.contenedor{
-  background: linear-gradient(
-    115deg,
-    rgba(8, 103, 110, 0.8),
-    rgba(173, 205, 86, 0.815)
-  ),url('images/img-people.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  height: 185vh; /* Ajusta según sea necesario */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
+@media screen and (max-width: 600px) {
+  body {
+    background-size: cover; /* Modificado para mantener cover en pantallas más pequeñas */
+  }
 }
